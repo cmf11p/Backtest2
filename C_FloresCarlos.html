@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            BackEnd - CoderHouse
+        </title>
+        <script>
+            class Usuario {
+                constructor(nombre,apellido,libros,mascotas) {
+                    this.nombre = nombre;
+                    this.apellido = apellido;
+                    this.libros = libros;
+                    this.mascotas = mascotas;
+                }
+                getFullName() {
+                    console.log(`${this.nombre} ${this.apellido}`);
+                }
+                addMascota(mascota) {
+                    this.mascotas.push(mascota);
+                }
+                countMascotas() {
+                    console.log(this.mascotas.length);
+                }
+                addBook(book,autor) {
+                    this.libros.push({nombre:book,autor:autor});
+                }
+                getBookNames() {
+                    let c = this.libros;
+                    let nombres = c.map(function (c) {return c.nombre});
+                    console.log(nombres);
+                }
+            }
+
+            let usuario = new Usuario('Carlos','Flores',[{nombre: 'El señor de las moscas',autor: 'William Golding'}],['perro','conejo','gato']);
+            usuario.getFullName(); usuario.addMascota("lagarto");
+            console.log("Cantidad de mascotas");usuario.countMascotas();
+            usuario.addBook("Fundacion","Isaac Asimov");
+            usuario.getBookNames();
+        </script>
+    </head>
+    <body>
+        <h2>Esta página contiene una aplicación JS</h2>
+        <h3>Check Console</h3>
+    </body>
+</html>
